@@ -1,0 +1,25 @@
+name: Run npm test on commit
+
+on:
+  push:
+    branches:
+      - '**'  # triggers on all branches
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # or '16', depending on your project
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test

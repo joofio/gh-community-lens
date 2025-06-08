@@ -1,0 +1,334 @@
+{
+  "resourceType": "Library",
+  "id": "community-lens",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/ig/gravitate-health/StructureDefinition/lens"
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "logical-library"
+      }
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/ig/gravitate-health/StructureDefinition/lee-version",
+      "valueString": "dev"
+    }
+  ],
+  "url": "http://hl7.eu/fhir/ig/gravitate-health/Library/588",
+  "identifier": [
+    {
+      "system": "http://gravitate-health.lst.tfo.upm.es",
+      "value": "community-lens"
+    }
+  ],
+  "version": "0.0.1",
+  "name": "Diabetes lens",
+  "_name": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "es"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente para la diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "pt"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente para a diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "da"
+          },
+          {
+            "url": "content",
+            "valueString": "Linse til diabetes"
+          }
+        ]
+      }
+    ]
+  },
+  "title": "community-lens",
+  "_title": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "es"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente para la diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "pt"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente para a diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "da"
+          },
+          {
+            "url": "content",
+            "valueString": "Linse til diabetes"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "draft",
+  "experimental": true,
+  "date": "2024-06-12T12:23:10.005Z",
+  "publisher": "Gravitate Health Project - UPM Team",
+  "contact": [
+    {
+      "name": "Gravitate Health",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gravitatehealth.eu/"
+        }
+      ]
+    }
+  ],
+  "description": "Lens that highlight diabetes related information",
+  "_description": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "es"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente que resalta informaci\u00f3n relacionada con la diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "pt"
+          },
+          {
+            "url": "content",
+            "valueString": "Lente que destaca informa\u00e7\u00f5es relacionadas com a diabetes"
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "da"
+          },
+          {
+            "url": "content",
+            "valueString": "Linse der fremh\u00e6ver diabetesrelaterede oplysninger"
+          }
+        ]
+      }
+    ]
+  },
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "EU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "purpose": "Highlight diabetes related information in a preprocessed ePI.",
+  "_purpose": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "es"
+          },
+          {
+            "url": "content",
+            "valueString": "Resaltar informaci\u00f3n relacionada con la diabetes en una ePI preprocesada."
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "pt"
+          },
+          {
+            "url": "content",
+            "valueString": "Destacar informa\u00e7\u00f5es relacionadas com a diabetes em uma ePI pr\u00e9-processada."
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "da"
+          },
+          {
+            "url": "content",
+            "valueString": "Fremh\u00e6v diabetesrelaterede oplysninger i en forbehandlet ePI."
+          }
+        ]
+      }
+    ]
+  },
+  "usage": "You can import this lens directly to your FHIR Server which suports Library Resource type.",
+  "_usage": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "es"
+          },
+          {
+            "url": "content",
+            "valueString": "Puedes importar esta lente directamente a tu servidor FHIR que soporte el tipo de recurso Library."
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "pt"
+          },
+          {
+            "url": "content",
+            "valueString": "Podes importar esta lente diretamente para o teu servidor FHIR que suporte o tipo de recurso Library."
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "da"
+          },
+          {
+            "url": "content",
+            "valueString": "Du kan importere denne linse direkte til din FHIR-server, som underst\u00f8tter ressource-typen Library."
+          }
+        ]
+      }
+    ]
+  },
+  "copyright": "\u00a9 2024 Gravitate Health",
+  "parameter": [
+    {
+      "use": "in",
+      "documentation": "parameter if it exists",
+      "type": "CodeableConcept"
+    }
+  ],
+  "content": [
+    {
+      "contentType": "application/javascript",
+      "title": "Lens for diabetes",
+      "data": "CmxldCBwdkRhdGEgPSBwdgpsZXQgaHRtbERhdGEgPSBodG1sCgpsZXQgZXBpRGF0YSA9IGVwaTsKbGV0IGlwc0RhdGEgPSBpcHM7CgpsZXQgZ2V0U3BlY2lmaWNhdGlvbiA9ICgpID0+IHsKICAgIHJldHVybiAiMS4wLjAiCn0KCmxldCBhbm5vdGF0aW9uUHJvY2VzcyA9IChsaXN0T2ZDYXRlZ29yaWVzLCBlbmhhbmNlVGFnLCBkb2N1bWVudCwgcmVzcG9uc2UpID0+IHsKICAgIGxpc3RPZkNhdGVnb3JpZXMuZm9yRWFjaCgoY2hlY2spID0+IHsKICAgICAgICBpZiAocmVzcG9uc2UuaW5jbHVkZXMoY2hlY2spKSB7CiAgICAgICAgICAgIGxldCBlbGVtZW50cyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlDbGFzc05hbWUoY2hlY2spOwogICAgICAgICAgICBmb3IgKGxldCBpID0gMDsgaSA8IGVsZW1lbnRzLmxlbmd0aDsgaSsrKSB7CiAgICAgICAgICAgICAgICBlbGVtZW50c1tpXS5jbGFzc0xpc3QuYWRkKGVuaGFuY2VUYWcpOwogICAgICAgICAgICAgICAgZWxlbWVudHNbaV0uY2xhc3NMaXN0LmFkZCgiZGlhYmV0ZXMtbGVucyIpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGlmIChkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiaGVhZCIpLmxlbmd0aCA+IDApIHsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJoZWFkIilbMF0ucmVtb3ZlKCk7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJib2R5IikubGVuZ3RoID4gMCkgewogICAgICAgICAgICAgICAgcmVzcG9uc2UgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiYm9keSIpWzBdLmlubmVySFRNTDsKICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKCJSZXNwb25zZTogIiArIHJlc3BvbnNlKTsKICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKCJSZXNwb25zZTogIiArIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5pbm5lckhUTUwpOwogICAgICAgICAgICAgICAgcmVzcG9uc2UgPSBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuaW5uZXJIVE1MOwogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfSk7CgogICAgaWYgKHJlc3BvbnNlID09IG51bGwgfHwgcmVzcG9uc2UgPT0gIiIpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgICAgICAgICJBbm5vdGF0aW9uIHByb2NjZXNzIGZhaWxlZDogUmV0dXJuZWQgZW1wdHkgb3IgbnVsbCByZXNwb25zZSIKICAgICAgICApOwogICAgICAgIC8vcmV0dXJuIGh0bWxEYXRhCiAgICB9IGVsc2UgewogICAgICAgIGNvbnNvbGUubG9nKCJSZXNwb25zZTogIiArIHJlc3BvbnNlKTsKICAgICAgICByZXR1cm4gcmVzcG9uc2U7CiAgICB9Cn0KCmxldCBhbm5vdGF0ZUhUTUxzZWN0aW9uID0gYXN5bmMgKGxpc3RPZkNhdGVnb3JpZXMsIGVuaGFuY2VUYWcpID0+IHsKICAgIGxldCByZXNwb25zZSA9IGh0bWxEYXRhOwogICAgbGV0IGRvY3VtZW50OwoKICAgIGlmICh0eXBlb2Ygd2luZG93ID09PSAidW5kZWZpbmVkIikgewogICAgICAgIGxldCBqc2RvbSA9IGF3YWl0IGltcG9ydCgianNkb20iKTsKICAgICAgICBsZXQgeyBKU0RPTSB9ID0ganNkb207CiAgICAgICAgbGV0IGRvbSA9IG5ldyBKU0RPTShodG1sRGF0YSk7CiAgICAgICAgZG9jdW1lbnQgPSBkb20ud2luZG93LmRvY3VtZW50OwogICAgICAgIHJldHVybiBhbm5vdGF0aW9uUHJvY2VzcyhsaXN0T2ZDYXRlZ29yaWVzLCBlbmhhbmNlVGFnLCBkb2N1bWVudCwgcmVzcG9uc2UpOwogICAgfSBlbHNlIHsKICAgICAgICBkb2N1bWVudCA9IHdpbmRvdy5kb2N1bWVudDsKICAgICAgICByZXR1cm4gYW5ub3RhdGlvblByb2Nlc3MobGlzdE9mQ2F0ZWdvcmllcywgZW5oYW5jZVRhZywgZG9jdW1lbnQsIHJlc3BvbnNlKTsKICAgIH0KfTsKCmxldCBlbmhhbmNlID0gYXN5bmMgKCkgPT4gewogICAgbGV0IGxpc3RPZkNhdGVnb3JpZXNUb1NlYXJjaCA9IFsiY29udHJhLWluZGljYXRpb24tZGlhYmV0ZXMtbWVsbGl0dXMiXQoKICAgIC8vSVBTIGludGVyYWN0aW9uIG5vdCBpbXBsZW1lbnRlZCB5ZXQKCiAgICAvL0dldCBjb25kaXRpb24gY2F0ZWdvcmllcyBmb3IgdGhlIGVQSSBhbmQgZmlsdGVycyBieSB0aGUgY29uZGl0aW9uIHdlIHdhbnQgdG8gY2hlY2sKICAgIGxldCBjYXRlZ29yaWVzID0gW10KICAgIGVwaS5lbnRyeS5mb3JFYWNoKGVsZW1lbnQgPT4gewogICAgICAgIGlmIChlbGVtZW50LnJlc291cmNlLmV4dGVuc2lvbiAhPSB1bmRlZmluZWQpIHsKICAgICAgICAgICAgZWxlbWVudC5yZXNvdXJjZS5leHRlbnNpb24uZm9yRWFjaChjYXRlZ29yeSA9PiB7CiAgICAgICAgICAgICAgICBpZiAobGlzdE9mQ2F0ZWdvcmllc1RvU2VhcmNoLmluY2x1ZGVzKGNhdGVnb3J5LmV4dGVuc2lvblswXS52YWx1ZVN0cmluZykpIHsKICAgICAgICAgICAgICAgICAgICBjYXRlZ29yaWVzLnB1c2goY2F0ZWdvcnkuZXh0ZW5zaW9uWzBdLnZhbHVlU3RyaW5nKQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9KTsKICAgICAgICB9CiAgICB9KTsKCiAgICAvL0ZvY3VzIChhZGRzIGhpZ2hsaWdodCBjbGFzcykgdGhlIGh0bWwgYXBwbHlpbmcgZXZlcnkgY2F0ZWdvcnkgZm91bmQKCiAgICBpZiAoY2F0ZWdvcmllcy5sZW5ndGggPT0gMCkgewogICAgICAgIC8vIHRocm93IG5ldyBFcnJvcigiTm8gY2F0ZWdvcmllcyBmb3VuZCIsIGNhdGVnb3JpZXMpOwogICAgICAgIHJldHVybiBodG1sRGF0YQogICAgfQogICAgLy9Gb2N1cyAoYWRkcyBoaWdobGlnaHQgY2xhc3MpIHRoZSBodG1sIGFwcGx5aW5nIGV2ZXJ5IGNhdGVnb3J5IGZvdW5kCiAgICByZXR1cm4gYXdhaXQgYW5ub3RhdGVIVE1Mc2VjdGlvbihjYXRlZ29yaWVzLCAiaGlnaGxpZ2h0Iik7Cn0KcmV0dXJuIHsKICAgIGVuaGFuY2U6IGVuaGFuY2UsCiAgICBnZXRTcGVjaWZpY2F0aW9uOiBnZXRTcGVjaWZpY2F0aW9uCn0=",
+      "_title": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension": [
+              {
+                "url": "lang",
+                "valueCode": "es"
+              },
+              {
+                "url": "content",
+                "valueString": "Lente para la diabetes"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension": [
+              {
+                "url": "lang",
+                "valueCode": "pt"
+              },
+              {
+                "url": "content",
+                "valueString": "Lente para a diabetes"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension": [
+              {
+                "url": "lang",
+                "valueCode": "da"
+              },
+              {
+                "url": "content",
+                "valueString": "Linse til diabetes"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "data": "bGV0IHB2RGF0YSA9IHB2OwpsZXQgaHRtbERhdGEgPSBodG1sOwoKbGV0IGVwaURhdGEgPSBlcGk7CmxldCBpcHNEYXRhID0gaXBzOwoKbGV0IGdldFNwZWNpZmljYXRpb24gPSAoKSA9PiB7CiAgICByZXR1cm4gIjIuMC4zLWNvbnRhY3QtYmFubmVyIjsKfTsKLy9kb2N1bWVudCwgaHRtbERhdGEsIGJhbm5lckhUTUwKLy8KY29uc3QgaW5zZXJ0Q29udGFjdExpbmtzID0gKGxpc3RPZkNhdGVnb3JpZXMsIGNvbnRhY3RzLCBkb2N1bWVudCwgcmVzcG9uc2UpID0+IHsKICAgIGxpc3RPZkNhdGVnb3JpZXMuZm9yRWFjaCgoY2xhc3NOYW1lKSA9PiB7CiAgICAgICAgaWYgKAogICAgICAgICAgICByZXNwb25zZS5pbmNsdWRlcyhgY2xhc3M9IiR7Y2xhc3NOYW1lfWApIHx8CiAgICAgICAgICAgIHJlc3BvbnNlLmluY2x1ZGVzKGBjbGFzcz0nJHtjbGFzc05hbWV9YCkKICAgICAgICApIHsKICAgICAgICAgICAgY29uc3QgZWxlbWVudHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5Q2xhc3NOYW1lKGNsYXNzTmFtZSk7CiAgICAgICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgZWxlbWVudHMubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgICAgIGNvbnN0IGVsID0gZWxlbWVudHNbaV07CgogICAgICAgICAgICAgICAgY29udGFjdHMuZm9yRWFjaChjb250YWN0ID0+IHsKICAgICAgICAgICAgICAgICAgICBsZXQgaHJlZiA9ICIiOwogICAgICAgICAgICAgICAgICAgIGlmIChjb250YWN0LnR5cGUgPT09ICJlbWFpbCIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgaHJlZiA9IGBtYWlsdG86JHtjb250YWN0LnZhbHVlfWA7CiAgICAgICAgICAgICAgICAgICAgfSBlbHNlIGlmIChjb250YWN0LnR5cGUgPT09ICJwaG9uZSIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgaHJlZiA9IGB0ZWw6JHtjb250YWN0LnZhbHVlfWA7CiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBpZiAoaHJlZikgewogICAgICAgICAgICAgICAgICAgICAgICAvLyBDcmVhdGUgPGE+IGFuZCB3cmFwIGV4aXN0aW5nIGNvbnRlbnQKICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgYSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImEiKTsKICAgICAgICAgICAgICAgICAgICAgICAgYS5zZXRBdHRyaWJ1dGUoImhyZWYiLCBocmVmKTsKICAgICAgICAgICAgICAgICAgICAgICAgYS5zZXRBdHRyaWJ1dGUoInRhcmdldCIsICJfYmxhbmsiKTsKICAgICAgICAgICAgICAgICAgICAgICAgYS5jbGFzc0xpc3QuYWRkKCJjb250YWN0LWxlbnMiKTsKCiAgICAgICAgICAgICAgICAgICAgICAgIGEuaW5uZXJIVE1MID0gZWwuaW5uZXJIVE1MOyAgLy8gbW92ZSBvcmlnaW5hbCBjb250ZW50IGludG8gPGE+CiAgICAgICAgICAgICAgICAgICAgICAgIGVsLmlubmVySFRNTCA9ICIiOyAgICAgICAgICAgLy8gY2xlYXIgb3JpZ2luYWwgY29udGVudAogICAgICAgICAgICAgICAgICAgICAgICBlbC5hcHBlbmRDaGlsZChhKTsgICAgICAgICAgIC8vIGluc2VydCB0aGUgPGE+IGluc2lkZSB0aGUgb3JpZ2luYWwgZWxlbWVudAogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0pOwogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfSkKCgogICAgLy8gQ2xlYW4gaGVhZCAoc2FtZSBhcyB5b3VyIG9yaWdpbmFsIGxvZ2ljKQogICAgaWYgKGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJoZWFkIikubGVuZ3RoID4gMCkgewogICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJoZWFkIilbMF0ucmVtb3ZlKCk7CiAgICB9CgogICAgLy8gRXh0cmFjdCBIVE1MIHJlc3VsdAogICAgaWYgKGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJib2R5IikubGVuZ3RoID4gMCkgewogICAgICAgIHJlc3BvbnNlID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoImJvZHkiKVswXS5pbm5lckhUTUw7CiAgICAgICAgY29uc29sZS5sb2coIlJlc3BvbnNlOiAiICsgcmVzcG9uc2UpOwogICAgfSBlbHNlIHsKICAgICAgICBjb25zb2xlLmxvZygiUmVzcG9uc2U6ICIgKyBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuaW5uZXJIVE1MKTsKICAgICAgICByZXNwb25zZSA9IGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5pbm5lckhUTUw7CiAgICB9CgogICAgaWYgKCFyZXNwb25zZSB8fCByZXNwb25zZS50cmltKCkgPT09ICIiKSB7CiAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJBbm5vdGF0aW9uIHByb2Nlc3MgZmFpbGVkOiBlbXB0eSBvciBudWxsIHJlc3BvbnNlIik7CiAgICB9CgogICAgcmV0dXJuIHJlc3BvbnNlOwp9OwoKbGV0IGVuaGFuY2UgPSBhc3luYyAoKSA9PiB7CiAgICBpZiAoIWlwc0RhdGEgfHwgIWlwc0RhdGEuZW50cnkgfHwgaXBzRGF0YS5lbnRyeS5sZW5ndGggPT09IDApIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIklQUyBpcyBlbXB0eSBvciBpbnZhbGlkLiIpOwogICAgfQogICAgaWYgKCFlcGlEYXRhIHx8ICFlcGlEYXRhLmVudHJ5IHx8IGVwaURhdGEuZW50cnkubGVuZ3RoID09PSAwKSB7CiAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJlUEkgaXMgZW1wdHkgb3IgaW52YWxpZC4iKTsKICAgIH0KCgogICAgbGV0IGFycmF5T2ZDbGFzc2VzID0gW3sgImNvZGUiOiAiZ3Jhdi00IiwgInN5c3RlbSI6ICJodHRwczovL3d3dy5ncmF2aXRhdGVoZWFsdGguZXUvc2lkL2RvYyIgfV0gICAgICAvL3doYXQgdG8gbG9vayBpbiBleHRlbnNpb25zIC1tYWRlIHVwIGNvZGUgYmVjYXVzZSB0aGVyZSBpcyBub25lCgogICAgY29uc3QgY29udGFjdHMgPSBbXTsgLy8gVGhpcyB3aWxsIHN0b3JlIHRoZSBjb2xsZWN0ZWQgY29udGFjdCBpbmZvCgogICAgZm9yIChjb25zdCBlbnRyeSBvZiBpcHNEYXRhLmVudHJ5KSB7CiAgICAgICAgY29uc3QgcmVzID0gZW50cnkucmVzb3VyY2U7CiAgICAgICAgaWYgKCFyZXMgfHwgcmVzLnJlc291cmNlVHlwZSAhPT0gIlBhdGllbnQiKSBjb250aW51ZTsKCiAgICAgICAgaWYgKEFycmF5LmlzQXJyYXkocmVzLmdlbmVyYWxQcmFjdGl0aW9uZXIpKSB7CiAgICAgICAgICAgIGZvciAoY29uc3QgZ3BSZWYgb2YgcmVzLmdlbmVyYWxQcmFjdGl0aW9uZXIpIHsKICAgICAgICAgICAgICAgIGNvbnN0IGdwSWQgPSBncFJlZi5yZWZlcmVuY2U/LnNwbGl0KCIvIilbMV07CiAgICAgICAgICAgICAgICBpZiAoIWdwSWQpIGNvbnRpbnVlOwoKICAgICAgICAgICAgICAgIGNvbnN0IGdwUmVzb3VyY2UgPSBpcHNEYXRhLmVudHJ5LmZpbmQoZSA9PiBlLnJlc291cmNlPy5pZCA9PT0gZ3BJZCk/LnJlc291cmNlOwogICAgICAgICAgICAgICAgaWYgKCFncFJlc291cmNlKSBjb250aW51ZTsKCiAgICAgICAgICAgICAgICBpZiAoCiAgICAgICAgICAgICAgICAgICAgZ3BSZXNvdXJjZS5yZXNvdXJjZVR5cGUgPT09ICJQcmFjdGl0aW9uZXIiIHx8CiAgICAgICAgICAgICAgICAgICAgZ3BSZXNvdXJjZS5yZXNvdXJjZVR5cGUgPT09ICJPcmdhbml6YXRpb24iCiAgICAgICAgICAgICAgICApIHsKICAgICAgICAgICAgICAgICAgICBjb25zdCB0ZWxlY29tcyA9IGdwUmVzb3VyY2UudGVsZWNvbTsKICAgICAgICAgICAgICAgICAgICBpZiAoQXJyYXkuaXNBcnJheSh0ZWxlY29tcykpIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgZmlsdGVyZWQgPSB0ZWxlY29tcy5maWx0ZXIodCA9PgogICAgICAgICAgICAgICAgICAgICAgICAgICAgWyJwaG9uZSIsICJlbWFpbCJdLmluY2x1ZGVzKHQuc3lzdGVtKQogICAgICAgICAgICAgICAgICAgICAgICApOwogICAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IHRlbGVjb20gb2YgZmlsdGVyZWQpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRhY3RzLnB1c2goewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGU6IHRlbGVjb20uc3lzdGVtLCAgICAgICAgICAgICAvLyAncGhvbmUnIG9yICdlbWFpbCcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogdGVsZWNvbS52YWx1ZSwgICAgICAgICAgICAgLy8gZS5nLiAnKzEyMzQ1Njc4OScKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXNvdXJjZVR5cGU6IGdwUmVzb3VyY2UucmVzb3VyY2VUeXBlLCAvLyAnUHJhY3RpdGlvbmVyJyBvciAnT3JnYW5pemF0aW9uJwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkOiBncFJlc291cmNlLmlkCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICAvLyBFeGFtcGxlIHVzYWdlOgogICAgY29uc29sZS5sb2coIkNvbGxlY3RlZCBjb250YWN0czoiLCBjb250YWN0cyk7CgoKICAgIC8vIGVQSSB0cmFzbGF0aW9uIGZyb20gdGVybWlub2xvZ3kgY29kZXMgdG8gdGhlaXIgaHVtYW4gcmVkYWJsZSB0cmFuc2xhdGlvbnMgaW4gdGhlIHNlY3Rpb25zCiAgICBsZXQgY29tcG9zaXRpb25zID0gMDsKICAgIGxldCBjYXRlZ29yaWVzID0gW107CgogICAgZXBpLmVudHJ5LmZvckVhY2goKGVudHJ5KSA9PiB7CiAgICAgICAgaWYgKGVudHJ5LnJlc291cmNlLnJlc291cmNlVHlwZSA9PSAiQ29tcG9zaXRpb24iKSB7CiAgICAgICAgICAgIGNvbXBvc2l0aW9ucysrOwogICAgICAgICAgICAvL0l0ZXJhdGVkIHRocm91Z2ggdGhlIENvbmRpdGlvbiBlbGVtZW50IHNlYXJjaGluZyBmb3IgY29uZGl0aW9ucwogICAgICAgICAgICBlbnRyeS5yZXNvdXJjZS5leHRlbnNpb24uZm9yRWFjaCgoZWxlbWVudCkgPT4gewoKICAgICAgICAgICAgICAgIC8vIENoZWNrIGlmIHRoZSBwb3NpdGlvbiBvZiB0aGUgZXh0ZW5zaW9uWzFdIGlzIGNvcnJlY3QKICAgICAgICAgICAgICAgIGlmIChlbGVtZW50LmV4dGVuc2lvblsxXS51cmwgPT0gImNvbmNlcHQiKSB7CiAgICAgICAgICAgICAgICAgICAgLy8gU2VhcmNoIHRocm91Z2ggdGhlIGRpZmZlcmVudCB0ZXJtaW5vbG9naWVzIHRoYXQgbWF5IGJlIGF2YWlibGUgdG8gY2hlY2sgaW4gdGhlIGNvbmRpdGlvbgogICAgICAgICAgICAgICAgICAgIGlmIChlbGVtZW50LmV4dGVuc2lvblsxXS52YWx1ZUNvZGVhYmxlUmVmZXJlbmNlLmNvbmNlcHQgIT0gdW5kZWZpbmVkKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGVsZW1lbnQuZXh0ZW5zaW9uWzFdLnZhbHVlQ29kZWFibGVSZWZlcmVuY2UuY29uY2VwdC5jb2RpbmcuZm9yRWFjaCgKICAgICAgICAgICAgICAgICAgICAgICAgICAgIChjb2RpbmcpID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZygiRXh0ZW5zaW9uOiAiICsgZWxlbWVudC5leHRlbnNpb25bMF0udmFsdWVTdHJpbmcgKyAiOiIgKyBjb2RpbmcuY29kZSArICIgLSAiICsgY29kaW5nLnN5c3RlbSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvLyBDaGVjayBpZiB0aGUgY29kZSBpcyBpbiB0aGUgbGlzdCBvZiBjYXRlZ29yaWVzIHRvIHNlYXJjaAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAoYXJyYXlPZkNsYXNzZXMuc29tZShpdGVtID0+IGl0ZW0uY29kZSA9PT0gY29kaW5nLmNvZGUgJiYgaXRlbS5zeXN0ZW0gPT09IGNvZGluZy5zeXN0ZW0pKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIENoZWNrIGlmIHRoZSBjYXRlZ29yeSBpcyBhbHJlYWR5IGluIHRoZSBsaXN0IG9mIGNhdGVnb3JpZXMKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIkZvdW5kIiwgZWxlbWVudC5leHRlbnNpb25bMF0udmFsdWVTdHJpbmcpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhdGVnb3JpZXMucHVzaChlbGVtZW50LmV4dGVuc2lvblswXS52YWx1ZVN0cmluZyk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICApOwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSk7CiAgICAgICAgfQogICAgfSk7CgoKICAgIGlmIChjb21wb3NpdGlvbnMgPT0gMCkgewogICAgICAgIHRocm93IG5ldyBFcnJvcignQmFkIGVQSTogbm8gY2F0ZWdvcnkgIkNvbXBvc2l0aW9uIiBmb3VuZCcpOwogICAgfQoKICAgIGVsc2UgewoKCiAgICAgICAgbGV0IHJlc3BvbnNlID0gaHRtbERhdGE7CiAgICAgICAgbGV0IGRvY3VtZW50OwoKICAgICAgICBpZiAodHlwZW9mIHdpbmRvdyA9PT0gInVuZGVmaW5lZCIpIHsKICAgICAgICAgICAgbGV0IGpzZG9tID0gYXdhaXQgaW1wb3J0KCJqc2RvbSIpOwogICAgICAgICAgICBsZXQgeyBKU0RPTSB9ID0ganNkb207CiAgICAgICAgICAgIGxldCBkb20gPSBuZXcgSlNET00oaHRtbERhdGEpOwogICAgICAgICAgICBkb2N1bWVudCA9IGRvbS53aW5kb3cuZG9jdW1lbnQ7CiAgICAgICAgICAgIHJldHVybiBpbnNlcnRDb250YWN0TGlua3MoY2F0ZWdvcmllcywgY29udGFjdHMsIGRvY3VtZW50LCByZXNwb25zZSk7CiAgICAgICAgICAgIC8vbGlzdE9mQ2F0ZWdvcmllcywgZW5oYW5jZVRhZywgZG9jdW1lbnQsIHJlc3BvbnNlCiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgZG9jdW1lbnQgPSB3aW5kb3cuZG9jdW1lbnQ7CiAgICAgICAgICAgIHJldHVybiBpbnNlcnRDb250YWN0TGlua3MoY2F0ZWdvcmllcywgY29udGFjdHMsIGRvY3VtZW50LCByZXNwb25zZSk7CiAgICAgICAgfQogICAgfTsKfTsKCnJldHVybiB7CiAgICBlbmhhbmNlOiBlbmhhbmNlLAogICAgZ2V0U3BlY2lmaWNhdGlvbjogZ2V0U3BlY2lmaWNhdGlvbiwKfTsK"
+}

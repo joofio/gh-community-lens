@@ -1,0 +1,725 @@
+{
+  "resourceType": "Bundle",
+  "id": "gravitate-ips-2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips"
+    ]
+  },
+  "type": "document",
+  "identifier": {
+    "system": "https://www.gravitatehealth.eu/sid/doc",
+    "value": "ips-2"
+  },
+  "timestamp": "2021-09-03T08:38:00+02:00",
+  "entry": [
+    {
+      "fullUrl": "https://myserver.org/Composition/2fa5b223-ebce-4f39-9c66-5dc014f73573",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "ips-example-2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ]
+        },
+        "section": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list Reported"
+                }
+              ]
+            },
+            "title": "Problem List",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Malignant neoplasm of breast (disorder)</li></ul><ul><li>Hypercholesterolemia</li></ul><ul><li>Rheumatoid arthritis</li></ul><ul><li>Epilepsy</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "Condition/bcc79261-142c-48ec-b032-f3f9af49ec53",
+                "display": "Malignant neoplasm of breast (disorder)"
+              },
+              {
+                "reference": "Condition/f06b7cf8-c15c-4288-a0f9-45a1026e5133",
+                "display": "Hypercholesterolemia"
+              },
+              {
+                "reference": "Condition/a4a9d90a-d1b0-4d60-82f0-c52343dc6253",
+                "display": "Rheumatoid arthritis"
+              },
+              {
+                "reference": "Condition/f06b7cf8-c15c-4288-a0f9-45a1026e6788",
+                "display": "Epilepsy (disorder)"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "title": "Allergies and Intolerances",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>No infos about Allergies</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/0dff4474-fa08-4f45-8260-dbb23094bf07",
+                "display": "No infos about Allergies"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "Hx of Medication use"
+                }
+              ]
+            },
+            "title": "Medication Summary",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Ogivri\ttrastuzumab 150 mg\tpowder for concentrate for solution for infusion</li></ul><ul><li>Lipcut\tSimvastatin\t5 mg\ttablet</li></ul><ul><li>Enbrel Etanercept 25 mg powder for solution for injection</li></ul><ul><li>Tegretol Carbamazepine\t200 mg\ttablets</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "MedicationStatement/29074ca4-efcb-4ff4-8446-feed2399a893",
+                "display": "Ogivri\ttrastuzumab 150 mg\tpowder for concentrate for solution for infusion"
+              },
+              {
+                "reference": "MedicationStatement/f6cb1218-f81c-4338-80d8-3c10910f78f3",
+                "display": "Lipcut\tSimvastatin\t5 mg tablet"
+              },
+              {
+                "reference": "MedicationStatement/f26084c9-b1c8-46d9-acb2-1d400ade87b3",
+                "display": "Enbrel Etanercept 25 mg powder for solution for injection"
+              },
+              {
+                "reference": "MedicationStatement/f26084c9-b1c8-46d9-acb2-1d400ade94gy",
+                "display": "Tegretol Carbamazepine\t200 mg\ttablets"
+              }
+            ]
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "date": "2018-07-10T15:22:00+02:00",
+        "author": [
+          {
+            "reference": "Practitioner/1ece89c5-fda3-4db9-ace6-decbe6c603d3",
+            "display": "Dr. Number2"
+          }
+        ],
+        "title": "Patient Summary (IPS2)",
+        "confidentiality": "N"
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "NO",
+                      "system": "urn:iso:std:iso:3166",
+                      "display": "Norway"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://www.gravitatehealth.eu/sid/doc",
+            "value": "ips-2"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "family": "Gravitate",
+            "given": [
+              "IPS-2"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1946-05-05",
+        "generalPractitioner": [
+          {
+            "reference": "Practitioner/1ece89c5-fda3-4db9-ace6-decbe6c603d3"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Practitioner/1ece89c5-fda3-4db9-ace6-decbe6c603d3",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "1ece89c5-fda3-4db9-ace6-decbe6c603d3",
+        "name": [
+          {
+            "family": "2",
+            "given": [
+              "IPS"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "email",
+            "value": "example@example.org"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/AllergyIntolerance/0dff4474-fa08-4f45-8260-dbb23094bf07",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "0dff4474-fa08-4f45-8260-dbb23094bf07",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "confirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "no-allergy-info",
+              "system": "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Condition/bcc79261-142c-48ec-b032-f3f9af49ec53",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "bcc79261-142c-48ec-b032-f3f9af49ec53",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "code": {
+          "text": "Malignant neoplasm of breast",
+          "coding": [
+            {
+              "code": "254837009",
+              "system": "http://snomed.info/sct",
+              "display": "Malignant neoplasm of breast (disorder)"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "asserter": {
+          "reference": "Practitioner/1ece89c5-fda3-4db9-ace6-decbe6c603d3",
+          "display": "Dr. IPS2"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Condition/a4a9d90a-d1b0-4d60-82f0-c52343dc6253",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "a4a9d90a-d1b0-4d60-82f0-c52343dc6253",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "69896004",
+              "system": "http://snomed.info/sct",
+              "display": "Rheumatoid arthritis (disorder)"
+            }
+          ],
+          "text": "Rheumatoid arthritis"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "onsetDateTime": "2015",
+        "asserter": {
+          "reference": "Practitioner/1ece89c5-fda3-4db9-ace6-decbe6c603d3",
+          "display": "Dr. IPS2"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Condition/f06b7cf8-c15c-4288-a0f9-45a1026e5133",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "f06b7cf8-c15c-4288-a0f9-45a1026e5133",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "13644009",
+              "system": "http://snomed.info/sct",
+              "display": "Hypercholesterolemia (disorder)"
+            }
+          ],
+          "text": "Hypercholesterolemia"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "onsetDateTime": "1993"
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Condition/f06b7cf8-c15c-4288-a0f9-45a1026e6788",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "f06b7cf8-c15c-4288-a0f9-45a1026e6788",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "84757009",
+              "system": "http://snomed.info/sct",
+              "display": "Epilepsy (disorder)"
+            }
+          ],
+          "text": "Epilepsy"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "onsetDateTime": "1993"
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/MedicationStatement/29074ca4-efcb-4ff4-8446-feed2399a893",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "29074ca4-efcb-4ff4-8446-feed2399a893",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "status": "active",
+        "effectiveDateTime": "2015",
+        "medicationReference": {
+          "reference": "Medication/b50ae644-e0b7-4007-809f-26f493cbe363",
+          "display": "trastuzumab"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "dosage": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "code": "20045000",
+                  "system": "http://standardterms.edqm.eu",
+                  "display": "Intravenous use"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/MedicationStatement/f6cb1218-f81c-4338-80d8-3c10910f78f3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "f6cb1218-f81c-4338-80d8-3c10910f78f3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "status": "active",
+        "effectiveDateTime": "2020",
+        "medicationReference": {
+          "reference": "Medication/de131e15-ed13-4b31-b38c-3204a84d99c3",
+          "display": "simvastatin"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "dosage": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "code": "20053000",
+                  "system": "http://standardterms.edqm.eu",
+                  "display": "Oral use"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/MedicationStatement/f26084c9-b1c8-46d9-acb2-1d400ade87b3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "f26084c9-b1c8-46d9-acb2-1d400ade87b3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "status": "active",
+        "effectiveDateTime": "2023",
+        "medicationReference": {
+          "reference": "Medication/9ac3356c-4ea4-4814-84c3-235484f2ef13",
+          "display": "enbrel"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "dosage": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "code": "20066000",
+                  "system": "http://standardterms.edqm.eu",
+                  "display": "Subcutaneous use"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/MedicationStatement/f26084c9-b1c8-46d9-acb2-1d400ade94gy",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "f26084c9-b1c8-46d9-acb2-1d400ade94gy",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "status": "active",
+        "effectiveDateTime": "2020",
+        "medicationReference": {
+          "reference": "Medication/9ac3356c-4ea4-4814-84c3-235484f2jk90",
+          "display": "carbamazepine"
+        },
+        "subject": {
+          "reference": "Patient/c154158f-6a43-4ab7-8443-e7f4bf915dd3",
+          "display": "IPS-2"
+        },
+        "dosage": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "code": "20053000",
+                  "system": "http://standardterms.edqm.eu",
+                  "display": "Oral use"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Medication/b50ae644-e0b7-4007-809f-26f493cbe363",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "b50ae644-e0b7-4007-809f-26f493cbe363",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "4249",
+              "system": "http://example.org/mpid/no",
+              "display": "trastuzumab"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "code": "50042000",
+              "system": "http://standardterms.edqm.eu",
+              "display": "Powder and solvent for concentrate for solution for infusion"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "code": "P188ANX8CK",
+                  "system": "http://fdasis.nlm.nih.gov",
+                  "display": "trastuzumab"
+                }
+              ],
+              "text": "trastuzumab"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Medication/de131e15-ed13-4b31-b38c-3204a84d99c3",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "de131e15-ed13-4b31-b38c-3204a84d99c3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "F92168108C432D63DACDD70444176BB3",
+              "system": "https://www.who-umc.org/phpid",
+              "display": "Lipcut\tSimvastatin\t20 mg\ttablet"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "code": "10219000",
+              "system": "http://standardterms.edqm.eu",
+              "display": "Tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "code": "AGG2FN16EV",
+                  "system": "http://fdasis.nlm.nih.gov",
+                  "display": "SIMVASTATIN"
+                }
+              ],
+              "text": "SIMVASTATIN"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Medication/9ac3356c-4ea4-4814-84c3-235484f2ef13",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "9ac3356c-4ea4-4814-84c3-235484f2ef13",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "0xF79CABF272B6A7EEF104DDDA44E82716",
+              "system": "https://www.who-umc.org/phpid",
+              "display": "Enbrel Etanercept\t25 mg powder for solution for injection"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "code": "50041500",
+              "system": "http://standardterms.edqm.eu",
+              "display": "Powder and solution for solution for injection"
+            }
+          ],
+          "text": "Powder and solution for solution for injection"
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "code": "OP401G7OJC",
+                  "system": "http://fdasis.nlm.nih.gov",
+                  "display": "ETANERCEPT (ENBREL)"
+                }
+              ],
+              "text": "Enbrel Etanercept\t25 mg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://myserver.org/Medication/9ac3356c-4ea4-4814-84c3-235484f2jk90",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "9ac3356c-4ea4-4814-84c3-235484f2jk90",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "5C62673C79E096D37914D32A45AA8F4D",
+              "system": "https://www.who-umc.org/phpid",
+              "display": "Tegretol Carbamazepine 200 mg tablets"
+            },
+            {
+              "code": "FB9808F4FED210183F412F9998622287",
+              "system": "https://www.who-umc.org/phpid",
+              "display": "Tegretol Carbamazepine 200 mg tablets"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "code": "10219000",
+              "system": "http://standardterms.edqm.eu",
+              "display": "Tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "code": "33CM23913M",
+                  "system": "http://fdasis.nlm.nih.gov",
+                  "display": "CARBAMAZEPINE"
+                }
+              ],
+              "text": "CARBAMAZEPINE"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "gh-test-lab-lens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab-lens.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^26.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joofio/gh-test-lab-lens.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joofio/gh-test-lab-lens/issues"
+  },
+  "homepage": "https://github.com/joofio/gh-test-lab-lens#readme"
+}
