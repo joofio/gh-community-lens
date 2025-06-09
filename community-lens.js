@@ -5,7 +5,7 @@ let epiData = epi;
 let ipsData = ips;
 
 let getSpecification = () => {
-    return "2.0.3-contact-banner";
+    return "2.0.3-community-banner";
 };
 //document, htmlData, bannerHTML
 //
@@ -32,7 +32,7 @@ const insertContactLinks = (listOfCategories, contacts, document, response) => {
                         const a = document.createElement("a");
                         a.setAttribute("href", href);
                         a.setAttribute("target", "_blank");
-                        a.classList.add("contact-lens");
+                        a.classList.add("community-lens");
 
                         a.innerHTML = el.innerHTML;  // move original content into <a>
                         el.innerHTML = "";           // clear original content
