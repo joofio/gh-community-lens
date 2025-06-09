@@ -152,6 +152,10 @@ let enhance = async () => {
     if (compositions == 0) {
         throw new Error('Bad ePI: no category "Composition" found');
     }
+    if (categories.length == 0) {
+    // throw new Error("No categories found", categories);
+    return htmlData;
+  }
 
     else {
 
