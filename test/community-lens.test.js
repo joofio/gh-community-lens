@@ -15,7 +15,7 @@ global.document = dom.window.document;
 
 let annotation;
 beforeAll(() => {
-  const scriptContent = fs.readFileSync(path.join(__dirname, "../contact-lens.js"), "utf-8");
+  const scriptContent = fs.readFileSync(path.join(__dirname, "../community-lens.js"), "utf-8");
 
   const context = {
     console,
@@ -41,7 +41,7 @@ beforeAll(() => {
 
 describe("Questionnaire adding Annotation Script (non-invasive)", () => {
   test("should return version string", () => {
-    expect(annotation.getSpecification()).toBe("2.0.3-contact-banner");
+    expect(annotation.getSpecification()).toBe("2.0.3-community-banner");
   });
 
   test("should return enhanced HTML containing questionaire link", async () => {
@@ -59,6 +59,6 @@ describe("Questionnaire adding Annotation Script (non-invasive)", () => {
 
     console.log(`✅ Enhanced HTML saved to: ${outputPath}`);
 
-    expect(result).toContain("example@example.org");
+    expect(result).toContain("<a href=\"https://community.health/ibuprofen-pain\" target=\"_blank\" class=\"community-link\">");
   });
 });

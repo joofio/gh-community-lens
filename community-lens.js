@@ -8,55 +8,80 @@ let getSpecification = () => {
     return "2.0.3-community-banner";
 };
 //document, htmlData, bannerHTML
-//
-const insertContactLinks = (listOfCategories, contacts, document, response) => {
-    listOfCategories.forEach((className) => {
-        if (
-            response.includes(`class="${className}`) ||
-            response.includes(`class='${className}`)
-        ) {
-            const elements = document.getElementsByClassName(className);
-            for (let i = 0; i < elements.length; i++) {
-                const el = elements[i];
 
-                contacts.forEach(contact => {
-                    let href = "";
-                    if (contact.type === "email") {
-                        href = `mailto:${contact.value}`;
-                    } else if (contact.type === "phone") {
-                        href = `tel:${contact.value}`;
-                    }
+const insertCommunityLink = (listOfCategories, matches, language, document, response) => {
+    let communityHTML = "";
 
-                    if (href) {
-                        // Create <a> and wrap existing content
-                        const a = document.createElement("a");
-                        a.setAttribute("href", href);
-                        a.setAttribute("target", "_blank");
-                        a.classList.add("community-lens");
+    if (matches.length > 0) {
+        let heading = "";
+        let intro = "";
 
-                        a.innerHTML = el.innerHTML;  // move original content into <a>
-                        el.innerHTML = "";           // clear original content
-                        el.appendChild(a);           // insert the <a> inside the original element
-                    }
-                });
-            }
+        if (language?.startsWith("pt")) {
+            heading = "👥 Comunidade relacionada";
+            intro = "Pode beneficiar ao juntar-se a uma comunidade de utilizadores com experiências semelhantes:";
+            callToAction = "Visitar Comunidade"
+        } else if (language?.startsWith("es")) {
+            heading = "👥 Comunidad relacionada";
+            intro = "Podría beneficiarse al unirse a una comunidad de personas con experiencias similares:";
+            callToAction = "Visitar comunidad"
+
+        } else if (language?.startsWith("da")) {
+            heading = "👥 Relateret fællesskab";
+            intro = "Det kan være nyttigt at deltage i et fællesskab med lignende oplevelser:";
+            callToAction = "Besøg fællesskab"
+
+        } else {
+            heading = "👥 Related Community";
+            intro = "You might benefit from joining a community of others with similar experiences:";
+            callToAction = "Visitar Comunidade"
+
         }
-    })
 
-
-    // Clean head (same as your original logic)
-    if (document.getElementsByTagName("head").length > 0) {
-        document.getElementsByTagName("head")[0].remove();
-    }
-
-    // Extract HTML result
-    if (document.getElementsByTagName("body").length > 0) {
-        response = document.getElementsByTagName("body")[0].innerHTML;
-        console.log("Response: " + response);
+        communityHTML = `
+        <div class="community-banner">
+            <h3>${heading}</h3>
+            <p>${intro}</p>
+            <ul>
+                ${matches.map(match => `
+                    <li>
+                        <a href="${match.href}" target="_blank" class="community-link">
+                           ${callToAction}
+                        </a>
+                    </li>`).join("")}
+            </ul>
+        </div>
+        `;
     } else {
-        console.log("Response: " + document.documentElement.innerHTML);
-        response = document.documentElement.innerHTML;
+        // No match: do not inject anything
+        return response;
     }
+
+    let injected = false;
+
+    listOfCategories.forEach((className) => {
+        console.log(className);
+        const targets = document.getElementsByClassName(className);
+        if (targets.length > 0) {
+            targets[0].innerHTML = communityHTML;
+            injected = true;
+        }
+    });
+
+    console.log(injected);
+    if (!injected) {
+        const bannerDiv = document.createElement("div");
+        bannerDiv.innerHTML = communityHTML;
+        const body = document.querySelector("body");
+        if (body) {
+            body.insertBefore(bannerDiv, body.firstChild);
+        }
+    }
+
+    const head = document.getElementsByTagName("head")[0];
+    if (head) head.remove();
+
+    const body = document.getElementsByTagName("body")[0];
+    response = body ? body.innerHTML : document.documentElement.innerHTML;
 
     if (!response || response.trim() === "") {
         throw new Error("Annotation process failed: empty or null response");
@@ -64,6 +89,7 @@ const insertContactLinks = (listOfCategories, contacts, document, response) => {
 
     return response;
 };
+
 
 let enhance = async () => {
     if (!ipsData || !ipsData.entry || ipsData.entry.length === 0) {
@@ -74,48 +100,102 @@ let enhance = async () => {
     }
 
 
-    let arrayOfClasses = [{ "code": "grav-4", "system": "https://www.gravitatehealth.eu/sid/doc" }]      //what to look in extensions -made up code because there is none
+    let arrayOfClasses = [{ "code": "grav-5", "system": "https://www.gravitatehealth.eu/sid/doc" }]      //what to look in extensions -made up code because there is none
 
-    const contacts = []; // This will store the collected contact info
+    const communities = {
+        "http://hl7.org/fhir/sid/icd-10#E11": [ // Diabetes
+            {
+                med: "http://www.whocc.no/atc#A10BA02", // Metformin
+                href: "https://community.health/metformin-diabetes"
+            }
+        ],
+        "http://hl7.org/fhir/sid/icd-10#R52": [ // Pain
+            {
+                med: "http://www.whocc.no/atc#M01AE01", // Ibuprofen
+                href: "https://community.health/ibuprofen-pain"
+            }
+        ],
+        "http://snomed.info/sct#254837009": [ // Malignant neoplasm of breast (disorder)
+            {
+                med: "https://www.gravitatehealth.eu/sid/doc#epibundle-123", // Ibuprofen
+                href: "https://community.health/ibuprofen-pain"
+            }
+        ],
 
-    for (const entry of ipsData.entry) {
+    };
+
+    const matches = [];
+
+    // Extract all condition codings
+    const conditions = ipsData.entry
+        .filter(e => e.resource?.resourceType === "Condition")
+        .flatMap(e => e.resource.code?.coding?.map(c => `${c.system}#${c.code}`) || []);
+
+    console.log(conditions);
+    // Extract all medication codings
+    // const meds = ipsData.entry
+    //   .filter(e => ["MedicationRequest", "MedicationStatement"].includes(e.resource?.resourceType))
+    //  .flatMap(e => e.resource.medicationCodeableConcept?.coding?.map(c => `${c.system}#${c.code}`) || []);
+
+
+    // Extrair identificadores de nível Bundle
+    const medKeys = [];
+
+    if (epiData.identifier?.value) {
+        const system = epiData.identifier.system || "";
+        medKeys.push(`${system}#${epiData.identifier.value}`);
+    }
+
+    // Extrair identificadores de MedicinalProductDefinition
+    epiData.entry.forEach(entry => {
         const res = entry.resource;
-        if (!res || res.resourceType !== "Patient") continue;
+        if (res?.resourceType === "MedicinalProductDefinition" && Array.isArray(res.identifier)) {
+            res.identifier.forEach(id => {
+                const system = id.system || "";
+                if (id.value) {
+                    medKeys.push(`${system}#${id.value}`);
+                }
+            });
+        }
+    });
+    console.log(medKeys);
 
-        if (Array.isArray(res.generalPractitioner)) {
-            for (const gpRef of res.generalPractitioner) {
-                const gpId = gpRef.reference?.split("/")[1];
-                if (!gpId) continue;
-
-                const gpResource = ipsData.entry.find(e => e.resource?.id === gpId)?.resource;
-                if (!gpResource) continue;
-
-                if (
-                    gpResource.resourceType === "Practitioner" ||
-                    gpResource.resourceType === "Organization"
-                ) {
-                    const telecoms = gpResource.telecom;
-                    if (Array.isArray(telecoms)) {
-                        const filtered = telecoms.filter(t =>
-                            ["phone", "email"].includes(t.system)
-                        );
-                        for (const telecom of filtered) {
-                            contacts.push({
-                                type: telecom.system,             // 'phone' or 'email'
-                                value: telecom.value,             // e.g. '+123456789'
-                                resourceType: gpResource.resourceType, // 'Practitioner' or 'Organization'
-                                id: gpResource.id
-                            });
-                        }
-                    }
+    // Match: for each condition, check if any matching med exists
+    for (const condKey of conditions) {
+        if (communities[condKey]) {
+            for (const entry of communities[condKey]) {
+                if (medKeys.includes(entry.med)) {
+                    matches.push({
+                        medication: entry.med,
+                        condition: condKey,
+                        href: entry.href
+                    });
                 }
             }
         }
     }
 
-    // Example usage:
-    console.log("Collected contacts:", contacts);
+    let languageDetected = null;
 
+    // 1. Check Composition.language
+    epiData.entry?.forEach((entry) => {
+        const res = entry.resource;
+        if (res?.resourceType === "Composition" && res.language) {
+            languageDetected = res.language;
+            console.log("🌍 Detected from Composition.language:", languageDetected);
+        }
+    });
+
+    // 2. If not found, check Bundle.language
+    if (!languageDetected && epiData.language) {
+        languageDetected = epiData.language;
+        console.log("🌍 Detected from Bundle.language:", languageDetected);
+    }
+
+    // 3. Fallback message
+    if (!languageDetected) {
+        console.warn("⚠️ No language detected in Composition or Bundle.");
+    }
 
     // ePI traslation from terminology codes to their human redable translations in the sections
     let compositions = 0;
@@ -135,7 +215,7 @@ let enhance = async () => {
                             (coding) => {
                                 console.log("Extension: " + element.extension[0].valueString + ":" + coding.code + " - " + coding.system)
                                 // Check if the code is in the list of categories to search
-                                    if (arrayOfClasses.some(item => item.code === coding.code && item.system === coding.system)) {
+                                if (arrayOfClasses.some(item => item.code === coding.code && item.system === coding.system)) {
                                     // Check if the category is already in the list of categories
                                     console.log("Found", element.extension[0].valueString)
                                     categories.push(element.extension[0].valueString);
@@ -148,14 +228,15 @@ let enhance = async () => {
         }
     });
 
-
-    if (compositions == 0) {
+    console.log(matches);
+     if (compositions == 0) {
         throw new Error('Bad ePI: no category "Composition" found');
     }
-    if (categories.length == 0) {
-    // throw new Error("No categories found", categories);
-    return htmlData;
-  }
+
+    if (matches.length==0) {
+        console.log("There are no matching communities for pair disease/medication");
+        return htmlData;
+    }
 
     else {
 
@@ -168,11 +249,11 @@ let enhance = async () => {
             let { JSDOM } = jsdom;
             let dom = new JSDOM(htmlData);
             document = dom.window.document;
-            return insertContactLinks(categories, contacts, document, response);
+            return insertCommunityLink(categories, matches,languageDetected,document, response);
             //listOfCategories, enhanceTag, document, response
         } else {
             document = window.document;
-            return insertContactLinks(categories, contacts, document, response);
+            return insertCommunityLink(categories, matches,languageDetected,document, response);
         }
     };
 };
