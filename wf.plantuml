@@ -1,0 +1,47 @@
+@startuml
+title Community Banner Injection Logic
+
+start
+
+:Check if IPS data is valid;
+if (IPS has entries?) then (yes)
+  :Check if ePI data is valid;
+  if (ePI has entries?) then (yes)
+    :Extract conditions from IPS;
+    :Extract medication IDs from ePI;
+
+    :Match conditions & meds with community DB;
+
+    if (Any matches found?) then (yes)
+      :Detect language;
+      if (Language starts with 'pt') then (yes)
+        :Set heading and intro in Portuguese;
+      else if (starts with 'es') then (yes)
+        :Set heading and intro in Spanish;
+      else if (starts with 'da') then (yes)
+        :Set heading and intro in Danish;
+      else
+        :Set heading and intro in English;
+      endif
+
+      :Try to inject banner into document;
+      if (Injection success?) then (yes)
+        :Return modified HTML;
+      else
+        :Insert banner at top of page;
+        :Return modified HTML;
+      endif
+
+    else (no match)
+      :Log "No matching communities";
+      :Return unmodified HTML;
+    endif
+
+  else (no ePI)
+    stop
+  endif
+else (no IPS)
+  stop
+endif
+
+@enduml
