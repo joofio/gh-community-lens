@@ -229,11 +229,11 @@ let enhance = async () => {
     });
 
     console.log(matches);
-     if (compositions == 0) {
+    if (compositions == 0) {
         throw new Error('Bad ePI: no category "Composition" found');
     }
 
-    if (matches.length==0) {
+    if (matches.length == 0) {
         console.log("There are no matching communities for pair disease/medication");
         return htmlData;
     }
@@ -249,11 +249,11 @@ let enhance = async () => {
             let { JSDOM } = jsdom;
             let dom = new JSDOM(htmlData);
             document = dom.window.document;
-            return insertCommunityLink(categories, matches,languageDetected,document, response);
+            return insertCommunityLink(categories, matches, languageDetected, document, response);
             //listOfCategories, enhanceTag, document, response
         } else {
             document = window.document;
-            return insertCommunityLink(categories, matches,languageDetected,document, response);
+            return insertCommunityLink(categories, matches, languageDetected, document, response);
         }
     };
 };
