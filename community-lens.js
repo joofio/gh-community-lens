@@ -258,7 +258,24 @@ let enhance = async () => {
     };
 };
 
+
+function getReport(lang) {
+    console.log("Generating report in language:", lang);
+    return { message: getExplanation(lang), status: "" };
+
+
+}
+
+// --- Get user-facing report sentence in the selected language ---
+function getExplanation(lang) {
+    console.log("Generating explanation in language:", lang);
+    return "";
+}
+
+// --- Exported API ---
 return {
     enhance: enhance,
     getSpecification: getSpecification,
+    explanation: (language) => getExplanation(language || lang),
+    report: (language) => getReport(language || lang),
 };
