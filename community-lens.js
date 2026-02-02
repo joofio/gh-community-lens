@@ -3,6 +3,7 @@ let htmlData = html;
 
 let epiData = epi;
 let ipsData = ips;
+let lang = "";  // Default language, will be set by ePI
 
 let getSpecification = () => {
     return "2.0.3-community-banner";
@@ -175,26 +176,25 @@ let enhance = async () => {
         }
     }
 
-    let languageDetected = null;
-
     // 1. Check Composition.language
     epiData.entry?.forEach((entry) => {
         const res = entry.resource;
         if (res?.resourceType === "Composition" && res.language) {
-            languageDetected = res.language;
-            console.log("🌍 Detected from Composition.language:", languageDetected);
+            lang = res.language;
+            console.log("🌍 Detected from Composition.language:", lang);
         }
     });
 
     // 2. If not found, check Bundle.language
-    if (!languageDetected && epiData.language) {
-        languageDetected = epiData.language;
-        console.log("🌍 Detected from Bundle.language:", languageDetected);
+    if (!lang && epiData.language) {
+        lang = epiData.language;
+        console.log("🌍 Detected from Bundle.language:", lang);
     }
 
-    // 3. Fallback message
-    if (!languageDetected) {
+    // 3. Fallback
+    if (!lang) {
         console.warn("⚠️ No language detected in Composition or Bundle.");
+        lang = "en";
     }
 
     // ePI traslation from terminology codes to their human redable translations in the sections
@@ -249,17 +249,17 @@ let enhance = async () => {
             let { JSDOM } = jsdom;
             let dom = new JSDOM(htmlData);
             document = dom.window.document;
-            return insertCommunityLink(categories, matches, languageDetected, document, response);
+            return insertCommunityLink(categories, matches, lang, document, response);
             //listOfCategories, enhanceTag, document, response
         } else {
             document = window.document;
-            return insertCommunityLink(categories, matches, languageDetected, document, response);
+            return insertCommunityLink(categories, matches, lang, document, response);
         }
     };
 };
 
 
-function getReport(lang) {
+function getReport(lang = "en") {
     console.log("Generating report in language:", lang);
     return { message: getExplanation(lang), status: "" };
 
@@ -267,7 +267,7 @@ function getReport(lang) {
 }
 
 // --- Get user-facing report sentence in the selected language ---
-function getExplanation(lang) {
+function getExplanation(lang = "en") {
     console.log("Generating explanation in language:", lang);
     return "";
 }
@@ -276,6 +276,6 @@ function getExplanation(lang) {
 return {
     enhance: enhance,
     getSpecification: getSpecification,
-    explanation: (language) => getExplanation(language || lang),
-    report: (language) => getReport(language || lang),
+    explanation: (language) => getExplanation(language || lang || "en"),
+    report: (language) => getReport(language || lang || "en"),
 };
