@@ -1,5 +1,11 @@
 # Encode JS to base64 and update JSON
-./scripts/update-lens-json.sh
+
+lens-tool-bundler batch-bundle --exclude data -f
 
 # Run tests
+
 npm test
+
+# re-add modified files
+
+git add -A
