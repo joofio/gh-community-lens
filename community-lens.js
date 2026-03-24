@@ -103,6 +103,10 @@ let enhance = async () => {
                 href: "https://community.health/metformin-diabetes"
             }
         ],
+        "http://snomed.info/sct#238131007": [{
+            med: "https://spor.ema.europa.eu/pmswi#EU/1/98/071/004", // xenical
+            href: "https://www.myobesityteam.com/"
+        }], //overweitgh
         "http://hl7.org/fhir/sid/icd-10#R52": [ // Pain
             {
                 med: "http://www.whocc.no/atc#M01AE01", // Ibuprofen
