@@ -23,7 +23,7 @@
   "identifier": [
     {
       "system": "http://gravitate-health.lst.tfo.upm.es",
-      "value": "community-lens"
+      "value": "community-finder-lens"
     }
   ],
   "version": "0.0.1",
@@ -117,7 +117,7 @@
   },
   "status": "draft",
   "experimental": true,
-  "date": "2026-03-24T20:51:33.270Z",
+  "date": "2026-03-24T21:01:59.156Z",
   "publisher": "Gravitate Health Project - UPM Team",
   "contact": [
     {
