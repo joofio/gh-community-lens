@@ -65,12 +65,8 @@ const insertCommunityLink = (listOfCategories, matches, language, document, resp
     });
 
     if (!injected) {
-        const bannerDiv = document.createElement("div");
-        bannerDiv.innerHTML = communityHTML;
-        const body = document.querySelector("body");
-        if (body) {
-            body.insertBefore(bannerDiv, body.firstChild);
-        }
+        const body = document.querySelector("body") || document.documentElement;
+        body.insertAdjacentHTML("afterbegin", communityHTML);
     }
 
     const head = document.getElementsByTagName("head")[0];
