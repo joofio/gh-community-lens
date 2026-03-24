@@ -65,9 +65,9 @@ const insertCommunityLink = (listOfCategories, matches, language, document, resp
 
     if (!injected) {
         const divs = document.querySelectorAll("body > div");
-        const targetDiv = divs.length > 1 ? divs[1] : divs[0] || document.querySelector("body") || document.documentElement;
+        const targetDiv = divs[2] || divs[1] || divs[0] || document.querySelector("body") || document.documentElement;
         targetDiv.insertAdjacentHTML("beforeend", communityHTML);
-        console.log("[community-lens] no target class found — banner appended to div[" + (divs.length > 1 ? 1 : 0) + "]");
+        console.log("[community-lens] no target class found — banner appended to div[" + Math.min(2, divs.length - 1) + "]");
     } else {
         console.log("[community-lens] banner injected into class:", listOfCategories.find(c => document.getElementsByClassName(c).length > 0));
     }

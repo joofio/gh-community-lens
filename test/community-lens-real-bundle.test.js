@@ -96,12 +96,12 @@ describe("Community lens — real Xenical bundle (bare XHTML, no <body> tag)", (
         expect(result).toContain("community-banner");
         expect(result).toContain("myobesityteam.com");
 
-        // The banner should be the LAST child of the second top-level div.
+        // The banner should be the LAST child of the third top-level div.
         const resultDom = new JSDOM(`<body>${result}</body>`);
         const divs = resultDom.window.document.querySelectorAll("body > div");
-        const secondDiv = divs[1];
-        expect(secondDiv).not.toBeNull();
-        expect(secondDiv?.lastElementChild?.classList.contains("community-banner")).toBe(true);
+        const thirdDiv = divs[2];
+        expect(thirdDiv).not.toBeNull();
+        expect(thirdDiv?.lastElementChild?.classList.contains("community-banner")).toBe(true);
     });
 
     test("no banner when IPS has no matching condition", async () => {

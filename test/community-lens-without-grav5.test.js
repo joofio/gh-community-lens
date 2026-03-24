@@ -49,10 +49,11 @@ describe("Community lens — ePI WITHOUT grav-5 class", () => {
         // Banner should still appear (match found via IPS condition + ePI identifier)
         expect(result).toContain("community-banner");
 
-        // Without a grav-5 target element the banner is appended at the end of the second div.
+        // Without a grav-5 target element the banner is appended at the end of the third div
+        // (or second if fewer than 3 exist).
         const resultDom = new JSDOM(result);
         const divs = resultDom.window.document.querySelectorAll("body > div");
-        const secondDiv = divs[1];
-        expect(secondDiv?.lastElementChild?.classList.contains("community-banner")).toBe(true);
+        const targetDiv = divs[2] || divs[1];
+        expect(targetDiv?.lastElementChild?.classList.contains("community-banner")).toBe(true);
     });
 });
