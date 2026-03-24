@@ -33,18 +33,14 @@ const getCommunityHTML = (matches, language) => {
     }
 
     return `
-        <div class="community-banner">
-            <h3>${heading}</h3>
-            <p>${intro}</p>
-            <ul>
-                ${matches.map(match => `
-                    <li>
-                        <a href="${match.href}" target="_blank" class="community-link">
-                           ${callToAction}
-                        </a>
-                    </li>`).join("")}
-            </ul>
-        </div>
+        <p class="community-banner">
+            <strong>${heading}</strong>
+            ${intro}
+            ${matches.map(match => `
+                <a href="${match.href}" target="_blank" class="community-link">
+                   ${callToAction}
+                </a>`).join("")}
+        </p>
         `;
 }
 
