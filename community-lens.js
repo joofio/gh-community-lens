@@ -56,6 +56,9 @@ const insertCommunityLink = (listOfCategories, matches, language, document, resp
     const communityHTML = getCommunityHTML(matches, language);
     let injected = false;
 
+    // console.log("[community-lens] target categories:", listOfCategories);
+    console.log("[community-lens] html before appending:", document.documentElement.innerHTML);
+
     listOfCategories.forEach((className) => {
         const targets = document.getElementsByClassName(className);
         if (targets.length > 0) {
@@ -65,15 +68,22 @@ const insertCommunityLink = (listOfCategories, matches, language, document, resp
     });
 
     if (!injected) {
-        const body = document.querySelector("body") || document.documentElement;
-        body.insertAdjacentHTML("afterbegin", communityHTML);
+        const divs = document.querySelectorAll("body > div");
+        const targetDiv = divs.length > 1 ? divs[1] : divs[0] || document.querySelector("body") || document.documentElement;
+        targetDiv.insertAdjacentHTML("beforeend", communityHTML);
+        console.log("[community-lens] no target class found — banner appended to div[" + (divs.length > 1 ? 1 : 0) + "]");
+    } else {
+        console.log("[community-lens] banner injected into class:", listOfCategories.find(c => document.getElementsByClassName(c).length > 0));
     }
 
     const head = document.getElementsByTagName("head")[0];
     if (head) head.remove();
 
     const body = document.getElementsByTagName("body")[0];
+    console.log("[community-lens] body exists:", !!body, "| body.innerHTML length:", body?.innerHTML?.length);
+    console.log("[community-lens] docElement.innerHTML length:", document.documentElement?.innerHTML?.length);
     response = body ? body.innerHTML : document.documentElement.innerHTML;
+    console.log("[community-lens] html after appending (first 300):", response.slice(0, 300));
 
     if (!response || response.trim() === "") {
         throw new Error("Annotation process failed: empty or null response");
